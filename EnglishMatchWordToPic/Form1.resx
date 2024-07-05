@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="WelcomeTxt.Text" xml:space="preserve">
+    <value>בַּמִּשְׂחָק הַבָּא יוֹפִיעוּ תְּמוּנוֹת שֶׁל כָּל מִינֵי חַיּוֹת .
+בְּכָל שָׁלָב יוֹפִיעוּ אַרְבַּע שֵׁמוֹת שֶׁל חַיּוֹת בְּשָׂפָה הָאַנְגְּלִית אֲבָל רַק אַחַת מֵהֶן מַתְאִימָה לַתְּמוּנָה .
+בְּסוֹף הַמִּשְׂחָק מְקַבְּלִים נְקוּדוֹת לְפִי כַּמּוּת הַתְּשׁוּבוֹת הַנְּכוֹנוֹת .
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

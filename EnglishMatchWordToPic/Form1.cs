@@ -12,8 +12,6 @@ namespace EnglishMatchWordToPic
 {
     public partial class Form1 : Form
     {
-        // quiz game variables
-
         int correctAnswer;
         int questionNumber = 1;
         int score;
@@ -22,29 +20,11 @@ namespace EnglishMatchWordToPic
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();         
             askQuestion(questionNumber);
             totalQuestions = 15;
+            UpdateQuestionNumber();
         }
-        private void hover_colors(object sender, EventArgs e)
-        {
-            if (lblQuestion.ForeColor == Color.White)
-            {
-                lblQuestion.ForeColor = Color.Black;
-            }
-            else
-            {
-                lblQuestion.ForeColor = Color.White;
-            }
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }  
-
-   
 
         private void checkAnswerEvent(object sender, EventArgs e)
         {
@@ -58,14 +38,17 @@ namespace EnglishMatchWordToPic
             }
             if (questionNumber == totalQuestions)
             {
-                MessageBox.Show(" כָּל הַכָּבוֹד ! הִרְוַחְתָּ " + (score) + " נְקֻדּוֹת"
-                    +Environment.NewLine+
-                    "?נְשַׂחֵק שׁוּב"
-                    );
-                score = 0;
-                questionNumber = 0;
-                askQuestion(questionNumber);
+                using (CongratulationsForm congratsForm = new CongratulationsForm(score))
+                {
+                    if (congratsForm.ShowDialog() == DialogResult.OK)
+                    {
+                        score = 0;
+                        questionNumber = 0; // Adjust to start from the first question again
+                        askQuestion(questionNumber);
+                    }
+                }
             }
+
 
 
             questionNumber++;
@@ -73,6 +56,7 @@ namespace EnglishMatchWordToPic
         }
         private void askQuestion(int qnum)
         {
+            UpdateQuestionNumber();
             switch (qnum) // question number
             {
                 case 1:
@@ -226,6 +210,50 @@ namespace EnglishMatchWordToPic
             }
         }
 
-        
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();           
+        }
+
+        private void UpdateQuestionNumber()
+        {
+            QuestionNum.Text = "שְׁאֵלָה מְסַפֵּר " + (questionNumber) + " מִתּוֹךְ " + (totalQuestions);
+        }
+
+        private void ShowGame(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true;
+            button1.Visible = true;
+            button2.Visible = true;
+            button3.Visible = true;
+            button4.Visible = true;
+            lblQuestion.Visible = true;
+            label2.Visible = true;
+            ExitButton.Visible = true;
+            QuestionNum.Visible = true;
+            WelcomeTxt.Visible = false;
+            WelcomeBtn.Visible = false;
+        }
     }
+
+    public partial class CongratulationsForm : Form // the message user gets when finishes to play
+    {
+        private int score;
+
+        public CongratulationsForm(int score)
+        {
+            InitializeComponent();
+            this.score = score;
+            lblCongrats.Text = $"כָּל הַכָּבוֹד! הִרְוַחְתָּ {score} נְקוּדוֹת";
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+    }
+
+
 }
