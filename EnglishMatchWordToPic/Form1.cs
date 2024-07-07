@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EnglishMatchWordToPic
@@ -213,7 +212,7 @@ namespace EnglishMatchWordToPic
         private void ExitButton_Click(object sender, EventArgs e)
         {
 
-            Application.Exit();           
+            this.Close();           
         }
 
         private void UpdateQuestionNumber()
@@ -232,7 +231,7 @@ namespace EnglishMatchWordToPic
             label2.Visible = true;
             ExitButton.Visible = true;
             QuestionNum.Visible = true;
-            WelcomeTxt.Visible = false;
+            WelcomeLabel.Visible = false;
             WelcomeBtn.Visible = false;
         }
     }
@@ -257,3 +256,4 @@ namespace EnglishMatchWordToPic
 
 
 }
+

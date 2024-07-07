@@ -10,8 +10,6 @@ namespace EnglishMatchWordToPic
 
         private System.ComponentModel.IContainer components = null;
         private Dictionary<Button, int> buttonGlowIntensity = new Dictionary<Button, int>();
-        private Dictionary<Button, (float, float)> buttonAnimationState = new Dictionary<Button, (float, float)>();
-
 
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -41,15 +39,15 @@ namespace EnglishMatchWordToPic
             this.label2 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.QuestionNum = new System.Windows.Forms.Label();
-            this.WelcomeTxt = new System.Windows.Forms.RichTextBox();
             this.WelcomeBtn = new System.Windows.Forms.Button();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(471, 107);
+            this.pictureBox1.Location = new System.Drawing.Point(685, 171);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(580, 405);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -61,7 +59,7 @@ namespace EnglishMatchWordToPic
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(471, 626);
+            this.button1.Location = new System.Drawing.Point(685, 690);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(238, 68);
             this.button1.TabIndex = 11;
@@ -76,7 +74,7 @@ namespace EnglishMatchWordToPic
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.button2.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(813, 626);
+            this.button2.Location = new System.Drawing.Point(1027, 690);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(238, 68);
             this.button2.TabIndex = 10;
@@ -91,7 +89,7 @@ namespace EnglishMatchWordToPic
             // 
             this.button3.BackColor = System.Drawing.Color.Violet;
             this.button3.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(471, 716);
+            this.button3.Location = new System.Drawing.Point(685, 780);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(238, 67);
             this.button3.TabIndex = 9;
@@ -106,7 +104,7 @@ namespace EnglishMatchWordToPic
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.button4.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(813, 715);
+            this.button4.Location = new System.Drawing.Point(1027, 779);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(238, 68);
             this.button4.TabIndex = 8;
@@ -122,7 +120,7 @@ namespace EnglishMatchWordToPic
             this.lblQuestion.BackColor = System.Drawing.Color.White;
             this.lblQuestion.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.Black;
-            this.lblQuestion.Location = new System.Drawing.Point(471, 527);
+            this.lblQuestion.Location = new System.Drawing.Point(685, 591);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblQuestion.Size = new System.Drawing.Size(579, 69);
@@ -136,7 +134,7 @@ namespace EnglishMatchWordToPic
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(471, 22);
+            this.label2.Location = new System.Drawing.Point(685, 86);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(579, 69);
@@ -149,7 +147,7 @@ namespace EnglishMatchWordToPic
             // 
             this.ExitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.ExitButton.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(646, 851);
+            this.ExitButton.Location = new System.Drawing.Point(860, 915);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(238, 67);
             this.ExitButton.TabIndex = 12;
@@ -165,7 +163,7 @@ namespace EnglishMatchWordToPic
             this.QuestionNum.BackColor = System.Drawing.Color.Transparent;
             this.QuestionNum.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuestionNum.ForeColor = System.Drawing.Color.Black;
-            this.QuestionNum.Location = new System.Drawing.Point(471, 799);
+            this.QuestionNum.Location = new System.Drawing.Point(685, 863);
             this.QuestionNum.Name = "QuestionNum";
             this.QuestionNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.QuestionNum.Size = new System.Drawing.Size(580, 49);
@@ -174,23 +172,11 @@ namespace EnglishMatchWordToPic
             this.QuestionNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.QuestionNum.Visible = false;
             // 
-            // WelcomeTxt
-            // 
-            this.WelcomeTxt.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.WelcomeTxt.ForeColor = System.Drawing.Color.Black;
-            this.WelcomeTxt.Location = new System.Drawing.Point(205, 267);
-            this.WelcomeTxt.Name = "WelcomeTxt";
-            this.WelcomeTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.WelcomeTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.WelcomeTxt.Size = new System.Drawing.Size(1019, 210);
-            this.WelcomeTxt.TabIndex = 14;
-            this.WelcomeTxt.Text = resources.GetString("WelcomeTxt.Text");
-            // 
             // WelcomeBtn
             // 
             this.WelcomeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.WelcomeBtn.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeBtn.Location = new System.Drawing.Point(616, 528);
+            this.WelcomeBtn.Location = new System.Drawing.Point(832, 573);
             this.WelcomeBtn.Name = "WelcomeBtn";
             this.WelcomeBtn.Size = new System.Drawing.Size(238, 68);
             this.WelcomeBtn.TabIndex = 15;
@@ -199,15 +185,24 @@ namespace EnglishMatchWordToPic
             this.WelcomeBtn.UseVisualStyleBackColor = false;
             this.WelcomeBtn.Click += new System.EventHandler(this.ShowGame);
             // 
+            // WelcomeLabel
+            // 
+            this.WelcomeLabel.AutoSize = true;
+            this.WelcomeLabel.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLabel.Location = new System.Drawing.Point(317, 424);
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            this.WelcomeLabel.Size = new System.Drawing.Size(1178, 120);
+            this.WelcomeLabel.TabIndex = 16;
+            this.WelcomeLabel.Text = resources.GetString("WelcomeLabel.Text");
+            this.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1532, 930);
-            this.Controls.Add(this.WelcomeBtn);
-            this.Controls.Add(this.WelcomeTxt);
+            this.ClientSize = new System.Drawing.Size(1993, 1129);
             this.Controls.Add(this.QuestionNum);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label2);
@@ -217,10 +212,13 @@ namespace EnglishMatchWordToPic
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.WelcomeLabel);
+            this.Controls.Add(this.WelcomeBtn);
             this.Name = "Form1";
             this.Text = "חִידוֹן חַיּוֹת בְּשָׂפָה הָאַנְגְּלִית";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -292,8 +290,8 @@ namespace EnglishMatchWordToPic
 
         private Button ExitButton;
         private Label QuestionNum;
-        private RichTextBox WelcomeTxt;
         private Button WelcomeBtn;
+        private Label WelcomeLabel;
     }
 
 
@@ -367,3 +365,4 @@ namespace EnglishMatchWordToPic
 
 
 }
+
